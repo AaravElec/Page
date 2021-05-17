@@ -1,0 +1,121 @@
+@echo off
+color 8b
+cls
+
+:bootscreen
+cls
+set /p password= ENTER PASS WORD OF YOUR ACCOUNT: 
+if %password% == aaravelec2011 goto desktop
+if not %password% == aaravelec2011 goto bootscreentwo
+
+:desktop
+cls
+color 8b
+cls
+echo -------------AOS 4------------
+echo.
+echo Date: %date% Time: %time%
+echo Here are your options in your own OS!!:
+echo 1)--------AOS WORD----------
+echo 2)-------AOS EXPLORER----------
+echo 3)-------CALCULATOR-----------
+set /p menuselect=
+if %menuselect% == 1 goto write
+if %menuselect% == 2 goto browse
+if %menuselect% == 3 goto calculator
+
+:write
+cls
+echo -----------AOS WORD , Welcome-------------
+echo What Will Be The Name Of Yout Text File, Enter Here
+set /p writeone= Name:
+cls
+echo Your File Is Created Click Any Key To Type
+pause
+cls
+set /p textone=
+pause
+echo Now Your File Is Created Go To AOS EXPLORER TO View Click Enter To Go To Desktop Screen
+pause
+goto desktop
+
+:calculator
+cls
+set /p equ=
+set /a equ=%equ%
+cls
+echo %equ%
+pause
+goto desktop
+
+:browse
+cls
+echo 1)%writeone%
+echo 2)%writetwo%
+echo 3)%writethree%
+set /p browse= 
+if %browse% == 1 goto textone
+if %browse% == 2 goto texttwo
+if %browse% == 3 goto textthree
+
+:textone
+cls
+echo %writeone%
+echo %textone%
+pause
+goto desktop
+
+:texttwo
+cls
+echo %writetwo%
+echo %texttwo%
+pause
+goto desktop
+
+:textthree
+cls
+echo %writethree%
+echo %textthree%
+pause
+goto desktop
+
+
+:bootscreentwo
+cls
+echo ---------Wrong Password---------
+echo 1)Try Entering Password Again
+echo 2)Login As Guest
+set /p logintype=
+if %logintype% == 1 goto bootscreen
+if %logintype% == 2 goto ltddesktop
+
+:ltddesktop
+cls
+echo -------------Guest Account----------------
+echo.
+echo -You Can Use Clock Or Calculator Only Here-
+echo.
+echo ----------------Welcome------------------
+pause
+cls
+echo 1)----------------Calculator--------------
+echo 2)------------------Clock--------------------
+set /p ltdmenu=
+if %ltdmenu% == 1 goto ltdcalculator
+if %ltdmenu% == 2 goto clock
+
+:clock 
+cls
+echo %date% %time%
+pause
+goto ltddesktop
+
+:ltdcalculator
+cls
+set /p equ=
+set /a equ=%equ%
+cls
+echo %equ%
+pause
+goto ltddesktop
+goto ltddesktop
